@@ -2,11 +2,11 @@ name: npx surge
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '15 15 * * *'
-  push:
-    branches: 
-      - 'main'
+  # schedule:
+  #   - cron: '15 15 * * *'
+  # push:
+  #   branches: 
+  #     - 'main'
 
 jobs:
   surge:
