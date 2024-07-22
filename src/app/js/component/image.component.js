@@ -1,6 +1,8 @@
 import { HTML, nImage } from '../libs/frontend/index.js'
 
 export class ImageComponent extends nImage {
+  getName() { return 'image-component' }
+
   state = {
     src: '',
     alt: '',

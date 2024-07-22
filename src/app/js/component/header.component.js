@@ -1,9 +1,11 @@
 import { HTML, nFlex } from '../libs/frontend/index.js'
 import { TwoColumnsComponent } from './two.columns.component.js'
 import { LinkComponent } from './link.component.js'
-import { ImageComponent } from './image.component.js'
+// import { ImageComponent } from './image.component.js'
 
 export class HeaderComponent extends HTML {
+  getName() { return 'header-component' }
+
   onCreate() {
     super.onCreate()
     this.append(new TwoColumnsComponent({

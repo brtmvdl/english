@@ -1,6 +1,8 @@
 import { HTML, nFlex } from '../libs/frontend/index.js'
 
 export class TwoColumnsComponent extends nFlex {
+  getName() { return 'two-columns-component' }
+
   children = {
     html1: new HTML(),
     html2: new HTML(),
