@@ -20,10 +20,10 @@ export class HeaderComponent extends HTML {
 
   getMenuComponent() {
     const flex = new nFlex()
-    flex.append(this.createLinkComponent({ text: 'reading', href: '/' }))
-    flex.append(this.createLinkComponent({ text: 'writing', href: '/' }))
-    flex.append(this.createLinkComponent({ text: 'listening', href: '/' }))
-    flex.append(this.createLinkComponent({ text: 'exams', href: '/' }))
+    flex.append(this.createLinkComponent({ text: 'reading', href: '/reading/' }))
+    flex.append(this.createLinkComponent({ text: 'writing', href: '/writing/' }))
+    flex.append(this.createLinkComponent({ text: 'listening', href: '/listening/' }))
+    flex.append(this.createLinkComponent({ text: 'exams', href: '/exams/' }))
     return flex
   }
 
