@@ -7,15 +7,27 @@ import { TextComponent } from './js/component/text.component.js'
 import { GridComponent } from './js/component/grid.component.js'
 import { getLearningList } from './js/lists/learning.list.js'
 
-export class Page extends HTML {
+export class PageComponent extends HTML {
   getName() { return 'page' }
 
   onCreate() {
     super.onCreate()
+    this.setStyles()
     this.append(new HeaderComponent())
+    this.appendBody()
+    this.append(new FooterComponent())
+  }
+
+  setStyles() {
+    this.setStyle('margin', '0rem auto')
+    this.setStyle('max-width', '60rem')
+  }
+}
+
+export class Page extends PageComponent {
+  appendBody() {
     this.append(this.getJumbotronComponent())
     this.append(this.getLearningListComponent())
-    this.append(new FooterComponent())
   }
 
   getJumbotronComponent() {
@@ -33,7 +45,7 @@ export class Page extends HTML {
           html.append(new ImageComponent({ src: image, alt: 'image' }))
           html.append(new TextComponent({ text: title }))
           html.append(new TextComponent({ text }))
-          html.append(new LinkComponent({ text: 'Go to the lessons', href: url }))
+          html.append(new LinkComponent({ text: 'go to the lessons', href: url }))
           return html
         })
     })

@@ -1,9 +1,7 @@
 import { HTML, nFlex } from '../libs/frontend/index.js'
 import { SeparatorComponent } from './separator.component.js'
 import { LinkComponent } from './link.component.js'
-import { ButtonComponent } from './button.component.js'
 import { LogoComponent } from './logo.component.js'
-import * as Flow from '../utils/flow.js'
 
 export class FooterComponent extends HTML {
   getName() { return 'footer-component' }
@@ -30,11 +28,7 @@ export class FooterComponent extends HTML {
   }
 
   getCopyRightComponent() {
-    const html = new HTML()
-    const link = this.getLogoLink()
-    link.setContainerStyle('width', '10rem')
-    html.append(link)
-    return html
+    return new LinkComponent({ text: 'english', href: '/' })
   }
 
   getLogoLink() {
@@ -45,21 +39,21 @@ export class FooterComponent extends HTML {
 
   getInfoComponent() {
     const html = new HTML()
-    html.append(new LinkComponent({ text: 'About us', href: '/' }))
-    html.append(new LinkComponent({ text: 'Terms of Use', href: '/' }))
-    html.append(new LinkComponent({ text: 'Privacy Policy', href: '/' }))
+    html.append(new LinkComponent({ text: 'about us', href: '/about-us/' }))
+    html.append(new LinkComponent({ text: 'terms of use', href: '/terms-of-use/' }))
+    html.append(new LinkComponent({ text: 'privacy policy', href: '/privacy-policy/' }))
     return html
   }
 
   getSocialsComponent() {
     const html = new HTML()
-    html.append(new LinkComponent({ text: 'Instagram', href: '?' }))
-    html.append(new LinkComponent({ text: 'Facebook', href: '?' }))
-    html.append(new LinkComponent({ text: 'Youtube', href: '?' }))
+    html.append(new LinkComponent({ text: 'instagram', href: '/instagram/' }))
+    html.append(new LinkComponent({ text: 'facebook', href: '/facebook/' }))
+    html.append(new LinkComponent({ text: 'youtube', href: '/youtube/' }))
     return html
   }
 
   getUpgradePlanButtonComponent() {
-    return new ButtonComponent({ text: 'upgrade', onclick: () => Flow.goTo('/upgrade/') })
+    return  new LinkComponent({ text: 'upgrade', href: '/upgrade/' })
   }
 }

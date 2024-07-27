@@ -1,13 +1,13 @@
 import { HTML, nFlex } from '../libs/frontend/index.js'
 import { TwoColumnsComponent } from './two.columns.component.js'
 import { LinkComponent } from './link.component.js'
-// import { ImageComponent } from './image.component.js'
 
 export class HeaderComponent extends HTML {
   getName() { return 'header-component' }
 
   onCreate() {
     super.onCreate()
+    this.setStyle('padding', '1rem 0rem')
     this.append(new TwoColumnsComponent({
       html1: this.getLogoComponent(),
       html2: this.getMenuComponent()
